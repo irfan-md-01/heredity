@@ -24,24 +24,6 @@ The system models genetic inheritance using a Bayesian Network that considers:
 - Normalizes probability distributions for accurate inference
 - Supports families with multiple generations
 
-## Installation
-
-1. Download the distribution code:
-   ```bash
-   wget https://cdn.cs50.net/ai/2023/x/projects/2/heredity.zip
-   unzip heredity.zip
-   cd heredity
-   ```
-
-2. Ensure Python 3.12 is installed on your system.
-
-## Usage
-
-Run the program with a CSV data file:
-
-```bash
-python heredity.py data/family0.csv
-```
 
 ### Sample Output
 
@@ -87,21 +69,10 @@ The system implements three core functions:
 
 ### 1. `joint_probability(people, one_gene, two_genes, have_trait)`
 Calculates the joint probability of a specific genetic configuration across all family members.
-
-**Parameters:**
-- `people`: Dictionary of family members and their information
-- `one_gene`: Set of people with exactly one copy of the gene
-- `two_genes`: Set of people with exactly two copies of the gene
-- `have_trait`: Set of people who exhibit the trait
-
 **Returns:** Joint probability as a float
 
 ### 2. `update(probabilities, one_gene, two_genes, have_trait, p)`
 Updates the probability distributions by adding the joint probability to appropriate categories.
-
-**Parameters:**
-- `probabilities`: Dictionary of probability distributions for each person
-- `p`: Joint probability to add to the distributions
 
 ### 3. `normalize(probabilities)`
 Normalizes all probability distributions so they sum to 1 while maintaining relative proportions.
@@ -128,18 +99,6 @@ The system uses predefined probabilities in the `PROBS` dictionary:
 - **Genetic Inheritance**: Children inherit one gene from each parent
 - **Mutation**: Genes can mutate during inheritance with small probability
 
-## Testing
-
-Test your implementation:
-```bash
-check50 ai50/projects/2024/x/heredity
-```
-
-Check code style:
-```bash
-style50 heredity.py
-```
-
 ## Example Calculation
 
 For a family where:
@@ -154,23 +113,14 @@ The joint probability calculation involves:
 
 Joint probability = 0.9504 × 0.0065 × 0.431288 ≈ 0.00266
 
-## Files
-
-- `heredity.py` - Main implementation file
-- `data/` - Directory containing sample family data files
-  - `family0.csv` - Sample family data
-  - `family1.csv` - Additional test data
-  - `family2.csv` - Additional test data
-
 ## Requirements
 
 - Python 3.12
-- No external dependencies (uses only Python standard library)
-- Optional: numpy or pandas (if familiar)
 
-## Academic Integrity
+## How to Run
 
-This project is part of CS50's Introduction to Artificial Intelligence with Python. Implement the required functions yourself without using external AI tools or copying solutions.
+1. Clone the repository
+2. python heredity.py data.csv
 
 ## License
 
